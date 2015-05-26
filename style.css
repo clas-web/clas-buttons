@@ -1,0 +1,34 @@
+
+.clas-button {
+	background-repeat:no-repeat;
+	background-position:center;
+	text-align: center;
+	height: 48px;
+}
+
+.clas-button.connections {
+	border:solid 1px #6db36d;
+	background-color:#b4d8b4;
+}
+
+.clas-button.thinkingmatters {
+	border:solid 1px #e79544;
+	background-color:#f3c9a0;
+}
+
+.clas-button.exchange {
+	border:solid 1px #debe76;
+	background-color:#eedeb9;
+}
+
+.wscontrol.clas-buttons-control a {
+	display:block;
+}
+
+.wscontrol.clas-buttons-control .clas-button {
+	margin-bottom:3px;
+}
+
+.wscontrol.clas-buttons-control a:last-child .clas-button {
+	margin-bottom:0px;
+}
