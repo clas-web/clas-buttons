@@ -174,7 +174,7 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 		
 		foreach( $options as $k => &$v )
 		{
-			$v = trim( $v );
+			if( is_string($v) ) $v = trim( $v );
 		}
 		
 		if( array_key_exists('connections', $options) && 
