@@ -170,13 +170,16 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 	 */
 	public function process_options( $options )
 	{
+		// options must be an array
 		if( !is_array($options) ) $options = array();
 		
+		// trim any values that is a string
 		foreach( $options as $k => &$v )
 		{
 			if( is_string($v) ) $v = trim( $v );
 		}
 		
+		// verify that each value is valid
 		if( array_key_exists('connections', $options) && 
 		   !array_key_exists($options['connections'], self::$CONNECTIONS) ) 
 			unset($options['connections']);
