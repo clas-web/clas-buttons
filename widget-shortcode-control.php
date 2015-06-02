@@ -105,7 +105,10 @@ class WidgetShortcodeControl extends WP_Widget
 		static::$index++;
 		if( !is_array($options) ) $options = array();
 		$options = $this->process_options( $this->merge_options($options) );
+		
+		ob_start();
 		$this->print_control( $options, $this->get_args() );
+		return ob_get_clean();
 	}
 	
 	
