@@ -5,7 +5,7 @@
  * The ClasButtons_WidgetShortcodeControl class for the "CLAS Buttons" plugin.
  * 
  * Shortcode Example:
- * [clas-buttons connections="default" thinkingmatters="default" exchange="default"]
+ * [clas_buttons connections="default" thinkingmatters="default" exchange="default"]
  * 
  * @package    clas-buttons
  * @author     Crystal Barton <cbarto11@uncc.edu>
