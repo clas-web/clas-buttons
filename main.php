@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: CLAS Buttons
-Plugin URI: 
-Description: Displays the three CLAS buttons through widget or shortcode.
+Plugin URI: https://github.com/clas-web/clas-buttons
+Description: Displays the three CLAS buttons through a widget or shortcode.
 Version: 1.0.0
 Author: Crystal Barton
-Author URI: 
+Author URI: https://www.linkedin.com/in/crystalbarton
 */
 
 
-require_once( dirname(__FILE__).'/control.php' );
+require_once( __DIR__.'/control.php' );
 ClasButtons_WidgetShortcodeControl::register_widget();
 ClasButtons_WidgetShortcodeControl::register_shortcode();
 

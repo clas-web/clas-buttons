@@ -1,24 +1,24 @@
 <?php
+
+require_once( __DIR__.'/widget-shortcode-control.php' );
+
+
 /**
- * ClasButtons_WidgetShortcodeControl
- * 
- * The ClasButtons_WidgetShortcodeControl class for the "CLAS Buttons" plugin.
+ * Controls the setup and display of the CLAS Buttons widget and shortcode.
  * 
  * Shortcode Example:
  * [clas_buttons connections="default" thinkingmatters="default" exchange="default"]
  * 
  * @package    clas-buttons
- * @author     Crystal Barton <cbarto11@uncc.edu>
+ * @author     Crystal Barton <atrus1701@gmail.com>
  */
-
-
-require_once( dirname(__FILE__).'/widget-shortcode-control.php' );
-
-
 if( !class_exists('ClasButtons_WidgetShortcodeControl') ):
 class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 {
-	
+	/**
+	 * The options for the Connections button.
+	 * @var  Array
+	 */
 	private static $CONNECTIONS = array(
 		'default' => array(
 			'title' => 'CLAS Connections',
@@ -30,6 +30,10 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 		),
 	);
 	
+	/**
+	 * The options for the Thinking Matters button.
+	 * @var  Array
+	 */
 	private static $THINKINGMATTERS = array(
 		'default' => array(
 			'title' => 'Thinking Matters',
@@ -37,6 +41,10 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 		),
 	);
 	
+	/**
+	 * The options for the Exchange button.
+	 * @var  Array
+	 */
 	private static $EXCHANGE = array(
 		'default' => array(
 			'title' => 'Exchange Online',
@@ -51,7 +59,6 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 	
 	/**
 	 * Constructor.
-	 * Setup the properties and actions.
 	 */
 	public function __construct()
 	{
@@ -83,7 +90,7 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 	
 	/**
 	 * Output the widget form in the admin.
-	 * @param   array   $options  The current settings for the widget.
+	 * @param  array  $options  The current settings for the widget.
 	 */
 	public function print_widget_form( $options )
 	{
@@ -165,21 +172,21 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 	/**
 	 * Process options from the database or shortcode.
 	 * Designed to convert options from strings or sanitize output.
-	 * @param   array   $options  The current settings for the widget or shortcode.
-	 * @return  array   The processed settings.
+	 * @param  array  $options  The current settings for the widget or shortcode.
+	 * @return  array  The processed settings.
 	 */
 	public function process_options( $options )
 	{
-		// options must be an array
+		// Options must be an array
 		if( !is_array($options) ) $options = array();
 		
-		// trim any values that is a string
+		// Trim any values that is a string
 		foreach( $options as $k => &$v )
 		{
 			if( is_string($v) ) $v = trim( $v );
 		}
 		
-		// verify that each value is valid
+		// Verify that each value is valid
 		if( array_key_exists('connections', $options) && 
 		   !array_key_exists($options['connections'], self::$CONNECTIONS) ) 
 			unset($options['connections']);
@@ -197,9 +204,9 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 	
 	
 	/**
-	 * Echo the widget or shortcode contents.
-	 * @param   array  $options  The current settings for the control.
-	 * @param   array  $args     The display arguments.
+	 * Prints the widget or shortcode contents.
+	 * @param  array  $options  The current settings for the control.
+	 * @param  array  $args  The display arguments.
 	 */
 	public function print_control( $options, $args = null )
 	{
@@ -231,11 +238,11 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 	
 	
 	/**
-	 * Echo a CLAS button.
-	 * @param   string  $button_key     The key for the button.
-	 * @param   string  $selection_key  The selected value for the button.
-	 * @param   string  $title          The title for the button.
-	 * @param   string  $link           The link/anchor url.
+	 * Print a CLAS button.
+	 * @param  string  $button_key  The key for the button.
+	 * @param  string  $selection_key  The selected value for the button.
+	 * @param  string  $title  The title for the button.
+	 * @param  string  $link  The link/anchor url.
 	 */
 	private function print_button( $button_key, $selection_key, $title, $link = null )
 	{
@@ -256,7 +263,6 @@ class ClasButtons_WidgetShortcodeControl extends WidgetShortcodeControl
 			?></a><?php
 		endif;
 	}
-	
 }
 endif;
 
