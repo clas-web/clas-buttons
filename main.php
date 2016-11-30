@@ -3,7 +3,7 @@
 Plugin Name: CLAS Buttons
 Plugin URI: https://github.com/clas-web/clas-buttons
 Description: Displays the three CLAS buttons through a widget or shortcode.
-Version: 1.1.3
+Version: 1.1.2
 Author: Crystal Barton
 Author URI: https://www.linkedin.com/in/crystalbarton
 */
