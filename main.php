@@ -6,6 +6,7 @@ Description: Displays the three CLAS buttons through a widget or shortcode.
 Version: 1.1.4
 Author: Crystal Barton
 Author URI: https://www.linkedin.com/in/crystalbarton
+GitHub Plugin URI: https://github.com/clas-web/clas-buttons
 */
 
 
