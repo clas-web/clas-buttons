@@ -1,8 +1,5 @@
 <?php
 
-require_once( __DIR__.'/widget-shortcode-control.php' );
-
-
 /**
  * Controls the setup and display of the CLAS Buttons widget and shortcode.
  * 
